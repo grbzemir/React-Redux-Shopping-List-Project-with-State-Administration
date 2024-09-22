@@ -4,7 +4,7 @@ const BasketCart = () => {
     return (
         <div>
             <h2>
-                <Link to='/'>Faturam &#10094;</Link>
+                <Link to='/'>Alınacaklar Listem &#10094;</Link>
                 <span>Faturam</span>
             </h2>
         </div>

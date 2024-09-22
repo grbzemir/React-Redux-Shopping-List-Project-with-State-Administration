@@ -9,7 +9,7 @@ import Basket from './Components/basket-cart.component'
 function App() {
   return (
     <div className='App'>
-      <h1>Alışveriş Sepeti</h1>
+      <h1>Alışveriş Listesi</h1>
       <Routes>
         <Route path='/' element={<Product />} />
         <Route path='basket' element={<Basket />} />
