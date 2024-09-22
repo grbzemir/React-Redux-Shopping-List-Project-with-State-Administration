@@ -1,3 +1,62 @@
+.App {
+  font-family: sans-serif;
+}
+
+.App>h1 {
+  font-size: 22px;
+  background-color: #188cd8;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  text-align: center;
+  letter-spacing: 3px;
+}
+
+.App>div>h2 {
+  font-size: 18px;
+  display: Flex;
+  justify-content: space-between;
+  text-decoration: none;
+}
+
+.App>div>h3 {
+  border-top: 1px solid #e1e1e1;
+  padding-top: 10px;
+  display: flex;
+  justify-content: end;
+}
+
+.product {
+  display: Flex;
+  padding: 10px;
+  margin: 0 0 10px 0;
+  border: 1px solid #e1e1e1;
+
+}
+
+.product img {
+  width: 130px;
+  margin: 0 10px 0 0;
+}
+
+.product button {
+  border: none;
+  background-color: #188cd8;
+  color: #fff;
+  padding: 3px 6px;
+  border-radius: 5px;
+}
+
+.product button:hover {
+  background-color: #0f6ab4;
+}
+
+.link {
+  color: #188cd8;
+  text-decoration: none;
+}
+
+/* Removed empty ruleset */
 /* #root {
   max-width: 1280px;
   margin: 0 auto;

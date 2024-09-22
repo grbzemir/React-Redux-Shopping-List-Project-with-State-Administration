@@ -9,7 +9,7 @@ const Product = (props) => {
         <div>
             <h2>
                 <span>Alınacaklar Listem</span>
-                <Link to="/basket">Faturam &#10095;</Link>
+                <Link className='link' to="/basket">Faturam &#10095;</Link>
             </h2>
             {
                 props.productList.map((product) =>
@@ -19,7 +19,7 @@ const Product = (props) => {
                         <div>
                             <h4>{product.name}</h4>
                             <p>{product.price} &#8378;</p>
-                            <button>Sepete Ekle</button>
+                            <button onClick={() => props.addBasket(product)}>Sepete Ekle</button>
                         </div>
                     </div>
                 ))
@@ -34,7 +34,8 @@ Product.propTypes = {
         image: PropTypes.string.isRequired,
         name: PropTypes.string.isRequired,
         price: PropTypes.number.isRequired
-    })).isRequired
+    })).isRequired,
+    addBasket: PropTypes.func.isRequired
 };
 
 

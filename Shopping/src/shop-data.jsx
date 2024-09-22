@@ -3,7 +3,7 @@ const SHOP_DATA = [
         id: 1,
         name: 'Selpak Paper Towel',
         price: 154.99,
-        image: 'https://www.selpak.com.tr/getmedia/d0e112d3-dbe7-4904-92f4-38c9334c6262/mendil-losyon.png?width=567&height=450&ext=.png'
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf9koMbhIrGMWTsuIEtRNqxv33QgsP51yZkQ&s'
     },
     {
         id: 2,
