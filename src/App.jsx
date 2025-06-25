@@ -5,6 +5,8 @@ import './App.css'
 import { Routes, Route } from 'react-router-dom'
 import Product from './components/Product'
 import Card from './components/Card'
+import { connect } from 'react-redux'
+import { addBasket } from './Redux/actions/Actions'
 
 function App() {
 
