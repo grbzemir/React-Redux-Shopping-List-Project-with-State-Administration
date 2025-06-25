@@ -35,6 +35,8 @@ const Data = [
         price: 49.99,
         image: 'https://semtgida.com/wp-content/uploads/2018/09/PAPIA-TOILET-PAPER-32-PERFUMED.jpg'
     }
+
+
 ];
 
 export default Data;
