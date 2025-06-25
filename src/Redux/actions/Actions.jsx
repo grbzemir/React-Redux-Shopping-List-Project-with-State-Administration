@@ -7,3 +7,15 @@ export const addBasket = (product) => {
     }
 }
 
+export const removeBasket = (id) => {
+    return {
+        type: "REMOVE_BASKET",
+        payload: id
+    }
+}
+
+export const clearBasket = () => {
+    return {
+        type: "CLEAR_BASKET"
+    };
+};
