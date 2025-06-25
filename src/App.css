@@ -1,42 +1,271 @@
-#root {
-  max-width: 1280px;
+/* Base Styles & Variables */
+:root {
+  --primary-color: #4a6fa5;
+  --secondary-color: #166088;
+  --accent-color: #4fc3f7;
+  --light-color: #f8f9fa;
+  --dark-color: #343a40;
+  --success-color: #28a745;
+  --danger-color: #dc3545;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f5f7fa;
+  color: var(--dark-color);
+  line-height: 1.6;
+}
+
+/* Layout */
+.App {
+  max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
+  min-height: 100vh;
+}
+
+h1 {
   text-align: center;
+  margin-bottom: 2rem;
+  color: var(--secondary-color);
+  font-size: 2.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background-color: var(--accent-color);
+  border-radius: 2px;
 }
 
-@keyframes logo-spin {
+h2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e1e5eb;
+}
+
+h3 {
+  margin-top: 2rem;
+  text-align: right;
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+  padding: 1rem;
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+/* Product & Card Styles */
+.product {
+  display: flex;
+  background: white;
+  margin-bottom: 1.5rem;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+}
+
+.product:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.product img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-right: 1px solid #e1e5eb;
+}
+
+.product div {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.product h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--secondary-color);
+}
+
+.product p {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+/* Button Styles */
+button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+  align-self: flex-start;
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+/* Link Styles */
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--secondary-color);
+  transform: translateX(-3px);
+}
+
+h2 a:hover {
+  transform: translateX(3px);
+}
+
+a span {
+  margin: 0 0.5rem;
+}
+
+/* Navigation Arrows */
+a::before,
+a::after {
+  font-size: 1.2rem;
+  line-height: 0;
+}
+
+h2 a::after {
+  content: '→';
+  margin-left: 0.5rem;
+}
+
+h2 a[href="/"]::before {
+  content: '←';
+  margin-right: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .App {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .product {
+    flex-direction: column;
+  }
+
+  .product img {
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid #e1e5eb;
+  }
+
+  .product div {
+    padding: 1rem;
+  }
+
+  button {
+    align-self: stretch;
+    text-align: center;
+  }
+}
+
+/* Animation */
+@keyframes fadeIn {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(20px);
   }
+
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.product {
+  animation: fadeIn 0.5s ease forwards;
 }
 
-.card {
-  padding: 2em;
+.product:nth-child(1) {
+  animation-delay: 0.1s;
 }
 
-.read-the-docs {
-  color: #888;
+.product:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.product:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.product:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.product:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.product:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+/* Empty State (you might want to add later) */
+.empty-state {
+  text-align: center;
+  padding: 3rem;
+  background: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.empty-state p {
+  color: #6c757d;
+  margin-bottom: 1.5rem;
 }
