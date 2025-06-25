@@ -5,9 +5,7 @@ import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { legacy_createStore as createStore } from 'redux'
-import { Reducers } from './Redux/reducers/Reducers.jsx'
-
-const store = createStore(Reducers)
+import { store } from './Redux/store.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
